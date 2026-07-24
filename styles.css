@@ -336,3 +336,24 @@ select:focus {
   margin-top: 6px;
 }
 
+/* Asegura que la tarjeta sea el contenedor de referencia */
+.card {
+  position: relative; /* Muy importante para que el logo se posicione relativo a la tarjeta */
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 860px;
+  width: 100%;
+}
+
+/* Logo diminuto y ubicado en la esquina superior izquierda del recuadro blanco */
+.app-logo {
+  position: absolute;
+  top: 0px;         /* Distancia desde el borde superior del recuadro */
+  right: 20px;        /* Distancia desde el borde izquierdo del recuadro */
+  width: 200px;        /* Tamaño de 5px exactos */
+  height: 200px;
+  object-fit: contain;
+}
