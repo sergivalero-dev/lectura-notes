@@ -1,65 +1,93 @@
+/* Importación de fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  background-color: #f0f2f5;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #334155;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 1.5rem;
+  padding: 2rem 1rem;
 }
 
+/* Tarjeta Principal estilo Glassmorphism */
 .card {
   background: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.35);
   text-align: center;
-  max-width: 860px;
+  max-width: 900px;
   width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 h1 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  color: #333;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #0f172a;
+  letter-spacing: -0.02em;
 }
 
+/* Sección de Controles principales */
 .controls {
   margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
 .control-group {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  font-weight: 500;
+  color: #475569;
 }
 
 select {
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   font-size: 0.95rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  font-weight: 500;
+  border-radius: 10px;
+  border: 1.5px solid #cbd5e1;
+  background-color: #f8fafc;
+  color: #0f172a;
   outline: none;
   cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* Pentagrama selector */
+select:hover {
+  border-color: #94a3b8;
+  background-color: #ffffff;
+}
+
+select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Pentagrama Selector Personalizado */
 .custom-container {
   width: 100%;
-  background: #f8f9fa;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 12px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 .custom-container.hidden {
@@ -67,10 +95,10 @@ select {
 }
 
 .custom-instructions {
-  font-size: 0.9rem;
-  color: #444;
-  margin-bottom: 8px;
-  font-weight: bold;
+  font-size: 0.88rem;
+  color: #64748b;
+  margin-bottom: 12px;
+  font-weight: 600;
 }
 
 #custom-staff-wrapper {
@@ -78,9 +106,10 @@ select {
   width: 780px;
   margin: 0 auto;
   background: #ffffff;
-  border-radius: 6px;
-  border: 1px solid #eee;
-  padding-bottom: 8px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  padding-bottom: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 #custom-staff {
@@ -88,11 +117,11 @@ select {
   height: 160px;
 }
 
-/* Contenedor de las casillas debajo del pentagrama */
+/* Estilo para las casillas alineadas bajo las notas */
 #checkboxes-container {
   position: relative;
   width: 780px;
-  height: 35px;
+  height: 40px;
 }
 
 .note-checkbox-item {
@@ -101,146 +130,208 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 4px;
 }
 
-.note-checkbox-item input {
+.note-checkbox-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #cbd5e1;
+  border-radius: 5px;
+  outline: none;
   cursor: pointer;
-  width: 16px;
-  height: 16px;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.note-checkbox-item input[type="checkbox"]:checked {
+  background-color: #22c55e;
+  border-color: #22c55e;
+  box-shadow: 0 2px 4px rgba(34, 197, 94, 0.3);
+}
+
+.note-checkbox-item input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .note-checkbox-item label {
-  font-size: 0.7rem;
-  font-weight: bold;
-  color: #555;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748b;
   cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .custom-actions {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 12px;
+  margin-top: 14px;
 }
 
 .btn-secondary {
-  background: #e0e0e0;
+  background: #e2e8f0;
+  color: #334155;
   border: none;
-  padding: 6px 14px;
+  padding: 6px 16px;
   font-size: 0.85rem;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 .btn-secondary:hover {
-  background: #d5d5d5;
+  background: #cbd5e1;
+  color: #0f172a;
 }
 
+/* Temporizador y Botones */
 .timer-controls {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background-color: #f8f9fa;
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: 1px solid #e0e0e0;
+  gap: 12px;
+  background-color: #f8fafc;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
 }
 
 .checkbox-label {
   font-size: 0.9rem;
-  font-weight: bold;
-  color: #444;
+  font-weight: 600;
+  color: #475569;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 #timer-speed:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
 .btn {
-  background-color: #1976d2;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   color: #ffffff;
   border: none;
-  padding: 0.6rem 1.2rem;
-  font-size: 0.95rem;
-  font-weight: bold;
-  border-radius: 6px;
+  padding: 0.75rem 1.8rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: all 0.2s ease;
 }
 
-.btn:hover { background-color: #1565c0; }
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
 
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Marcador de puntuación */
 .score-board {
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  font-size: 1.1rem;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+  font-size: 1.15rem;
 }
 
-.score-item.success { color: #2e7d32; }
-.score-item.error { color: #c62828; }
+.score-item {
+  padding: 6px 16px;
+  border-radius: 20px;
+}
 
+.score-item.success {
+  color: #15803d;
+  background-color: #f0fdf4;
+}
+
+.score-item.error {
+  color: #b91c1c;
+  background-color: #fef2f2;
+}
+
+/* Contenedor del Pentagrama del Juego */
 #staff {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.5rem 0 1rem 0;
-  background-color: #fafafa;
-  border-radius: 8px;
-  border: 1px solid #eee;
-  min-height: 180px;
+  margin: 0.8rem 0 1.2rem 0;
+  background-color: #ffffff;
+  border-radius: 14px;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02), 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  min-height: 190px;
 }
 
 .feedback {
-  font-size: 1rem;
-  font-weight: bold;
-  min-height: 1.5rem;
-  color: #555;
-  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  min-height: 1.8rem;
+  color: #64748b;
+  margin-bottom: 0.8rem;
 }
 
+/* Guía Teclado Táctil */
 .guide-label {
-  font-size: 0.85rem;
-  color: #777;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
 }
 
 .keyboard-guide {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .key-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 42px;
+  width: 48px;
 }
 
 .key {
-  background: #e0e0e0;
-  padding: 6px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+  padding: 8px 0;
   width: 100%;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 1rem;
-  border-bottom: 3px solid #b0b0b0;
-  color: #333;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border: 1px solid #cbd5e1;
+  border-bottom: 4px solid #94a3b8;
+  color: #1e293b;
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .note-es {
   font-size: 0.75rem;
-  color: #666;
-  margin-top: 4px;
+  font-weight: 600;
+  color: #64748b;
+  margin-top: 6px;
 }
