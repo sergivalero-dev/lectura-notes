@@ -335,3 +335,23 @@ select:focus {
   color: #64748b;
   margin-top: 6px;
 }
+
+/* Estilos para el Logo y Encabezado */
+.header-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.app-logo {
+  max-height: 48px; /* Ajusta este valor si quieres el logo más grande o pequeño */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Ajuste para que el h1 no tenga el margen inferior duplicado */
+.header-brand h1 {
+  margin-bottom: 0;
+}
