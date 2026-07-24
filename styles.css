@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+.card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 860px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.controls {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+select {
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Pentagrama selector */
+.custom-container {
+  width: 100%;
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.custom-container.hidden {
+  display: none;
+}
+
+.custom-instructions {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+#custom-staff-wrapper {
+  position: relative;
+  width: 780px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+#custom-staff {
+  width: 780px;
+  height: 160px;
+}
+
+/* Contenedor de las casillas debajo del pentagrama */
+#checkboxes-container {
+  position: relative;
+  width: 780px;
+  height: 35px;
+}
+
+.note-checkbox-item {
+  position: absolute;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.note-checkbox-item input {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.note-checkbox-item label {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+}
+
+.custom-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-secondary {
+  background: #e0e0e0;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-secondary:hover {
+  background: #d5d5d5;
+}
+
+.timer-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.checkbox-label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#timer-speed:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn {
+  background-color: #1976d2;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover { background-color: #1565c0; }
+
+.score-board {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.score-item.success { color: #2e7d32; }
+.score-item.error { color: #c62828; }
+
+#staff {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0 1rem 0;
+  background-color: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  min-height: 180px;
+}
+
+.feedback {
+  font-size: 1rem;
+  font-weight: bold;
+  min-height: 1.5rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.guide-label {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.keyboard-guide {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.key-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 42px;
+}
+
+.key {
+  background: #e0e0e0;
+  padding: 6px 0;
+  width: 100%;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1rem;
+  border-bottom: 3px solid #b0b0b0;
+  color: #333;
+  text-align: center;
+}
+
+.note-es {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 4px;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lectura de Notes Musicals</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/vexflow@4.2.2/build/cjs/vexflow.js"></script>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Pràctica de Lectura Musical</h1>
+
+    <!-- Selector de Dificultad y Temporizador -->
+    <div class="controls">
+      <div class="control-group">
+        <label for="difficulty">Nivell de Notes:</label>
+        <select id="difficulty">
+          <option value="1">Nivell 1: C4, D4, E4 (Do, Re, Mi)</option>
+          <option value="2">Nivell 2: C4 a G4 (Do a Sol)</option>
+          <option value="3">Nivell 3: C4 a B4 (Escala central)</option>
+          <option value="4">Nivell 4: C4 a F5 (Rango ampliado)</option>
+          <option value="custom">✏️ Personalitzat</option>
+        </select>
+      </div>
+
+      <!-- Panel del Pentagrama Selector -->
+      <div id="custom-selector-container" class="custom-container hidden">
+        <p class="custom-instructions">Marca les caselles de les notes que vols incloure en el joc:</p>
+        <div id="custom-staff-wrapper">
+          <div id="custom-staff"></div>
+          <div id="checkboxes-container"></div>
+        </div>
+        <div class="custom-actions">
+          <button id="select-all-btn" class="btn-secondary">Totes</button>
+          <button id="deselect-all-btn" class="btn-secondary">Cap</button>
+        </div>
+      </div>
+
+      <div class="timer-controls">
+        <label class="checkbox-label">
+          <input type="checkbox" id="timer-enable"> Activar Temporitzador
+        </label>
+        
+        <select id="timer-speed" disabled>
+          <option value="5000">Muy fácil (5s)</option>
+          <option value="4000">Fácil (4s)</option>
+          <option value="3000" selected>Medio (3s)</option>
+          <option value="2000">Difícil (2s)</option>
+          <option value="1000">Pro (1s)</option>
+          <option value="750">Pro+ (0.75s)</option>
+        </select>
+      </div>
+
+      <button id="next-btn" class="btn">Següent nota ➔</button>
+    </div>
+
+    <!-- Marcador de Aciertos y Errores -->
+    <div class="score-board">
+      <div class="score-item success">Correcte: <span id="hits">0</span></div>
+      <div class="score-item error">Incorrecte: <span id="errors">0</span></div>
+    </div>
+
+    <!-- Contenedor del Pentagrama del Juego -->
+    <div id="staff"></div>
+
+    <p id="feedback" class="feedback">Presiona la tecla de la nota al teu teclat (C, D, E, F, G, A, B)</p>
+
+    <!-- Guía Visual de Teclas -->
+    <p class="guide-label">Guía de Teclas:</p>
+    <div class="keyboard-guide">
+      <div class="key-container"><span class="key">C</span><span class="note-es">Do</span></div>
+      <div class="key-container"><span class="key">D</span><span class="note-es">Re</span></div>
+      <div class="key-container"><span class="key">E</span><span class="note-es">Mi</span></div>
+      <div class="key-container"><span class="key">F</span><span class="note-es">Fa</span></div>
+      <div class="key-container"><span class="key">G</span><span class="note-es">Sol</span></div>
+      <div class="key-container"><span class="key">A</span><span class="note-es">La</span></div>
+      <div class="key-container"><span class="key">B</span><span class="note-es">Si</span></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
