@@ -101,27 +101,35 @@ select:focus {
   font-weight: 600;
 }
 
+/* Ajustes para el contenedor del pentagrama personalizado */
 #custom-staff-wrapper {
   position: relative;
-  width: 780px;
+  width: 100%;             /* Se adapta automáticamente a la tarjeta */
+  max-width: 100%;
   margin: 0 auto;
   background: #ffffff;
-  border-radius: 10px;
-  border: 1px solid #e2e8f0;
-  padding-bottom: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  border: 1px solid #eee;
+  padding-bottom: 8px;
+  overflow-x: auto;         /* Evita desbordamientos feos */
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* Centra todo en el medio */
 }
 
 #custom-staff {
-  width: 780px;
+  width: 100%;
+  max-width: 740px;        /* Ancho máximo ajustado para que quepa perfecto */
   height: 160px;
+  display: flex;
+  justify-content: center;
 }
 
-/* Estilo para las casillas alineadas bajo las notas */
 #checkboxes-container {
   position: relative;
-  width: 780px;
-  height: 40px;
+  width: 100%;
+  max-width: 740px;        /* Misma anchura máxima para alinear casillas */
+  height: 35px;
 }
 
 .note-checkbox-item {
@@ -351,7 +359,7 @@ select:focus {
 /* Logo diminuto y ubicado en la esquina superior izquierda del recuadro blanco */
 .app-logo {
   position: absolute;
-  top: 0px;         /* Distancia desde el borde superior del recuadro */
+  top: -25px;         /* Distancia desde el borde superior del recuadro */
   right: 20px;        /* Distancia desde el borde izquierdo del recuadro */
   width: 200px;        /* Tamaño de 5px exactos */
   height: 200px;

@@ -127,10 +127,10 @@ function drawCustomSelector() {
 
   const VF = Vex.Flow;
   const renderer = new VF.Renderer(customStaffEl, VF.Renderer.Backends.SVG);
-  renderer.resize(780, 160);
+  renderer.resize(730, 160);
   const context = renderer.getContext();
 
-  const stave = new VF.Stave(10, 20, 760);
+  const stave = new VF.Stave(10, 20, 710);
   stave.addClef("treble");
   stave.setContext(context).draw();
 
